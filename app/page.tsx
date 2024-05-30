@@ -1,19 +1,22 @@
 "use client";
 
-import { useActions } from "ai/rsc";
+import { useAIState, useActions } from "ai/rsc";
 
 export default function Home() {
   const { submitUserMessage } = useActions();
+  const [aiState] = useAIState();
+
+  console.log(aiState);
 
   return (
     <div>
       <div
-        className="bg-white"
+        className="bg-zinc-100 p-2"
         onClick={async () => {
           await submitUserMessage();
         }}
       >
-        button
+        click here
       </div>
     </div>
   );
