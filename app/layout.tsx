@@ -1,5 +1,6 @@
 import "./globals.css";
 import { AI } from "./actions";
+import { nanoid } from "ai";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AI initialAIState={{ messages: [] }}>{children}</AI>
+        <AI initialAIState={{ id: nanoid(), messages: [] }}>{children}</AI>
       </body>
     </html>
   );
